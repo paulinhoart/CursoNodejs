@@ -2,7 +2,14 @@ const { obterPessoas } = require('./service')
 
 async function main () {
     try {
-        const { results } = await obterPessoas(`a`)
+        const { results } = await obterPessoas(``)
+        
+        const allNames = results
+        const todosNomes = []
+        for(nomes of allNames) {
+            todosNomes.push(nomes.name)
+        }
+
 
         const familiaLars = results.filter( function (item) {
             // por padrao precisa retorar um booleano
